@@ -23,5 +23,12 @@ Feature: login functionality
 
     Then verify the login status
 
+  Scenario: verify the login by entering the valid username and invalid password
+
+    When Enters the cedential
+      |username |password   |
+      |student  |Pass123   |
+
+
 
 

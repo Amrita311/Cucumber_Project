@@ -47,6 +47,16 @@ public class Steps {
         homePage.verifyTheLogin();
     }
 
+    @When("Enters the cedential")
+    public void enters_the_cedential(DataTable dataTable) {
+        LoginPage lp=new LoginPage();
+        String userName=dataTable.asMaps().get(0).get("username");
+        String pass=dataTable.asMaps().get(0).get("password");
+        lp.enterCredentials(userName,pass);
+
+    }
+
+
 
 
 
