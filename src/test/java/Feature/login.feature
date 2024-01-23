@@ -5,29 +5,55 @@ Feature: login functionality
 
   Scenario: verify the login by entering the valid username and password
 
-    Given Launch the browser and navigates to login page
+    Given Navigates to login page
 
-    When Enters the username and password
+    When Enters the credentials
     |username |password   |
     |student  |Password123|
 
-    Then User should be on home page
+    Then verify the login status
+      | text                   |
+      | Logged In Successfully |
 
-  Scenario: verify the login by entering the invalid username and password
+  Scenario: verify the login by entering valid username and invalid password
 
-    Given Launch the browser and navigates to login page
+    Given Navigates to login page
 
-    When Enters the cedentials
-      |username |password   |
-      |student123  |Password123|
+    When Enters the credentials
+      | username | password |
+      | student  | invalid  |
 
     Then verify the login status
+      | text                      |
+      | Your password is invalid! |
 
-  Scenario: verify the login by entering the valid username and invalid password
+  Scenario: verify the login by entering invalid username and valid password
 
-    When Enters the cedential
-      |username |password   |
-      |student  |Pass123   |
+    Given Navigates to login page
+
+    When Enters the credentials
+      | username | password |
+      | invalid  | invalid  |
+
+    Then verify the login status
+      | text                      |
+      | Your username is invalid! |
+
+  Scenario: verify the login by entering invalid username and invalid password
+
+    Given Navigates to login page
+
+    When Enters the credentials
+      | username | password |
+      | invalid  | invalid  |
+
+    Then verify the login status
+      | text                      |
+      | Your username is invalid! |
+
+
+
+    
 
 
 

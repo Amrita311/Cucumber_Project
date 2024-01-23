@@ -22,7 +22,7 @@ public class HomePage extends BaseTest {
         PageFactory.initElements(BaseTest.driver, this);
     }
 
-    //Methods
+
 
     public void navigatesToLoginPage()  {
 

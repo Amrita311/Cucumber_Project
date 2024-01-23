@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeClass;
         features = "src/test/java/Feature",
         glue = "org/example/StepDefinition",
         monochrome = true,
-        tags = "@Login"
+        tags = "@Login_Outline"
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
     @BeforeClass
